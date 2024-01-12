@@ -29,6 +29,7 @@ input.onButtonPressed(Button.AB, function () {
             if (led.point(x, y)) {
                 music.play(music.tonePlayable(294, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
                 score += 1
+                delay += -10
             } else {
                 led.plot(x, y)
                 basic.pause(delay)
@@ -39,8 +40,8 @@ input.onButtonPressed(Button.AB, function () {
             }
         }
     }
-    basic.showString("" + (score))
     music.play(music.stringPlayable("A F E F D G E F ", 120), music.PlaybackMode.UntilDone)
+    basic.showString("" + (score))
 })
 input.onButtonPressed(Button.B, function () {
     if (position <= 3) {
